@@ -30,7 +30,10 @@ namespace WebApiWithLinq.Controllers
             var data = await _productRepository.GetThirdHighestSalaryAsync();
 
             if (data == null)
+            {
                 return NotFound("Third highest salary not found");
+            }
+                
 
             return Ok(data);
         }
